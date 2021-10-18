@@ -8,4 +8,5 @@ def index(request):
 
 def post(request ,pk):
     posts = Post.objects.get(id=pk)
-    return render(request, 'posts.html', {'posts': posts})
+    context= {'posts': posts}
+    return render(request, 'posts.html',context )
