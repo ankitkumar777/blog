@@ -4,7 +4,7 @@ from .models import Post
 from django.views.generic import ListView
 from django.views import View
 
-class IndexView(ListView):
+class BlogIndexView(ListView):
     model=Post
     template_name="posts/index.html"
 
@@ -12,4 +12,4 @@ class IndexView(ListView):
 def post(request ,pk):
     posts = Post.objects.get(id=pk)
     context= {'posts': posts}
-    return render(request, 'posts.html',context )
+    return render(request, 'posts/posts.html',context )
