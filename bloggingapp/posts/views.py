@@ -12,4 +12,4 @@ class BlogIndexView(ListView):
 def post(request ,pk):
     posts = Post.objects.get(id=pk)
     context= {'posts': posts}
-    return render(request, 'posts/posts.html',context )
+    return render(request, 'posts/post-detail.html',context )

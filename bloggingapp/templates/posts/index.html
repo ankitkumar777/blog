@@ -3,32 +3,24 @@
 
 {% block content %}
 
-
-<div class="row">
+<div class="container">
   {% for post in object_list reversed %}
-  <div class="col col-md-3">
-    <div class="card">
-      <div class="card card-header">
-        {% if post.img %}
-        <img class="card-img-top" src="{{post.img.url}}" alt="Card image cap">
-        {% endif %}
-        <br>
-        <h5 class="card-title">{{post.title}}</h5>
-      </div>
-      <div class="card-body">
-        <p class="card-text">{{post.created_at}}</p>
-        <p class="card-text">{{post.body|truncatewords:10}} <a href="/post/{{post.id}}">Read more</a></p>
-        <a href="/post/{{post.id}}" class="btn btn-primary">POST{{post.id}}</a>
-      </div>
+  <div class="card">
+    <div class="card card-header">
+      {% if post.img %}
+      <img class="card-img-top" src="{{post.img.url}}" alt="Card image cap">
+      {% endif %}
+      <br>
+      <h5 class="card-title">{{post.title}}</h5>
+    </div>
+    <div class="card-body">
+      <p class="card-text">{{post.created_at}}</p>
+      <p class="card-text">{{post.body|truncatewords:10}} <a href="/post/{{post.id}}">Read more</a></p>
+      <a href="/post/{{post.id}}" class="btn btn-primary">POST{{post.id}}</a>
     </div>
   </div>
-  {% endfor %}
 </div>
-</div>
-
-{% endblock %}
-
-
+{% endfor %}
 
 {% if is_paginated %}
 <ul class="pagination">
@@ -51,3 +43,4 @@
   {% endif %}
 </ul>
 {% endif %}
+{% endblock %}
