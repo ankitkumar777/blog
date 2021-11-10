@@ -13,24 +13,15 @@ html{
 
 a{
     text-decoration: none;
+    margin: 0 1.0vw;
     color: cornsilk;
     }
-    .container{
-        min-height: 100vh;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        
-    }
 
-#mynavbar{
-    font-size: 16px;
-
-}
-
-#carouselExampleControls{
-    width: auto;
-    margin: 20px 80px;
+.container{
+    min-height: 100vh;
+    width: 100%;
     display: flex;
+    align-items: center;
+    justify-content: center;
+        
 }
