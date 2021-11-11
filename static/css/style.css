@@ -1,0 +1,11 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    text-transform: capitalize;
+    text-align: center;
+    font-size: small;
+
+}
