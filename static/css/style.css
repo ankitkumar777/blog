@@ -1,24 +1,62 @@
-*{
+html,
+body {
+    padding: 0;
+    margin: 0;
+    background: #fff;
+    letter-spacing: 1px;
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body a {
+    outline: none;
+    transition: 0.5s all;
+    text-decoration: none;
+}
+
+body a:hover {
+    text-decoration: none;
+}
+
+body a:focus,
+a:hover {
+    text-decoration: none;
+}
+
+input[type="email"],
+input[type="text"],
+textarea,
+span {
+    font-family: 'Libre Franklin', sans-serif;
+    transition: 0.5s all;
+    letter-spacing: 1px;
+}
+
+h1,
+h3,
+h4 {
     margin: 0;
     padding: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    letter-spacing: 1px;
 }
 
-h1{
-    text-transform: capitalize;
-    text-align: center;
-    font-size: small;
-
+p {
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0px;
+    font-family: 'Libre Franklin', sans-serif;
 }
 
-.heading {
-    text-transform: capitalize;
-    text-align: center;
-    background-color:  rgb(239, 221, 255);
-    margin-top: 20px;
-    margin-bottom: 10px;
-    padding: 20px 0px 20px 0px;
-    color: rgb(0, 0, 0);
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
 }
-.heading h1{
-    font-size: x-large;
+
+ul li {
+    display: inline-block;
 }
