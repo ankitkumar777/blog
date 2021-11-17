@@ -60,10 +60,11 @@
             </form>
         </div>
     </nav>
-    <div class="container">
+
+    <div class="heading">
         <h1>The Best Blogging Website</h1>
     </div>
-    <div class="container">
+    <div class="container-fluid">
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -110,10 +111,10 @@
             </a>
         </div>
     </div>
+        {% block content %}
 
-    {% block content %}
+        {% endblock %}
 
-    {% endblock %}
     <script src="{% static 'js/jquery-3.2.1.slim.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/popper.min.js' %}"></script>
