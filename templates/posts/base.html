@@ -17,53 +17,80 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Blogging Website</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <div class="front-page" id="home">
+        <!-- header -->
+        <div class="header-left">
+            <div id="logo">
+                <h1>
+                    <a href="#">BlogAble.com</a>
+                </h1>
+            </div>
+            <!-- navbar -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#">Blogging Website</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">asdfasd</span>
+                </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About Me</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Travel</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Lifestyle</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Food</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Inspire</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Fashion</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Beauty</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About Me</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Travel</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Lifestyle</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Food</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Inspire</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Fashion</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Beauty</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
+            <!-- //navbar -->
         </div>
-    </nav>
-
-    <div class="heading">
-        <h1>The Best Blogging Website</h1>
+        <!-- //header -->
+        <br>
+        <!-- banner -->
+        <div class="bg-img">
+            <div class="container-fluid">
+                <div class="slider-info">
+                    <h3>We Blog Anything and Everything.!!!</h3>
+                    <div class="bg-btn mt-md-4 mt-3">
+                        <a href="#">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //banner -->
     </div>
+    <!-- //front-page -->
+<section>
+    this is a section i am working on!!!!!
+</section>
     <div class="container-fluid">
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
@@ -111,9 +138,9 @@
             </a>
         </div>
     </div>
-        {% block content %}
+    {% block content %}
 
-        {% endblock %}
+    {% endblock %}
 
     <script src="{% static 'js/jquery-3.2.1.slim.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
