@@ -13,6 +13,16 @@
 {% endif %}
 {% endblock msg %}
 
+{% block side %}
+<div class="col-sm-2 my-5 text-center">
+  <h4 class="my-5">Profile</h4>
+  <h5>{{full_name}}</h5>
+  {% for group in groups %}
+  <p>{{group.name}}</p>
+  {% endfor %}
+</div>
+{% endblock side %}
+
 {% block content %}
 <div class="col-sm-12">
   <h3 class="text-center my-5">Dashboard Page</h3>
@@ -35,9 +45,11 @@
         <td>{{p.title}}</td>
         <td>{{p.body}}</td>
         <td class="text-center"><a href="{% url 'updatepost' p.id %}" class="btn btn-warning btn-sm">Edit</a>
+          {% if perms.post.delete_post %}
           <form action="{% url 'deletepost' p.id %}" method="post" class="d-inline">{% csrf_token %}
             <input type="submit" class="btn btn-danger btn-sm" value="Delete">
           </form>
+          {% endif %}
         </td>
 
       </tr>

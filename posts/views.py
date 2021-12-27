@@ -5,6 +5,7 @@ from .forms import SignUpForm, LoginForm, PostForm
 from django.views import View
 from django.views.generic import ListView, TemplateView
 from django.contrib import messages
+from django.contrib.auth.models import Group
 # Create your views here.
 
 def index(request):
@@ -29,7 +30,15 @@ class ContactView(TemplateView):
 def dashboard(request):
     if request.user.is_authenticated:
         post= Post.objects.all()
-        return render(request, "posts/dashboard.html",  {'post': post})
+        user = request.user
+        full_name = user.get_full_name()
+        gps = user.groups.all()
+        context = {
+            'post':post,
+            'full_name': full_name,
+            'groups': gps
+        }
+        return render(request, "posts/dashboard.html", context)
     else:
         return HttpResponseRedirect('/login/')
 
@@ -37,8 +46,11 @@ def user_signup(request):
     if request.method =="POST":
         form = SignUpForm(request.POST)
         if form.is_valid():
-            form.save()
-            messages.success(request, 'Registration Successful')
+            user = form.save()
+            group = Group.objects.get(name='Author')
+            user.groups.add(group)
+            messages.success(request, 'Registration Successful as Author')
+            return HttpResponseRedirect('/login/')
     else:
         form = SignUpForm()
     context = {'form':form}
@@ -68,10 +80,6 @@ def user_logout(request):
     logout(request)
     return HttpResponseRedirect('/')
 
-def post(request ,pk):
-    posts = Post.objects.get(id=pk)
-    context= {'posts': posts}
-    return render(request, 'posts/post-detail.html',context)
 
 def add_post(request):
     if request.user.is_authenticated:
@@ -99,10 +107,12 @@ def update_post(request,pk):
             form = PostForm(request.POST, instance=pi)
             if form.is_valid():
                 form.save()
+                messages.success(request, "Post Update Successful")
+                return HttpResponseRedirect('/dashboard/')
         else:
             pi= Post.objects.get(id=pk)
             form = PostForm(instance=pi)
-            context = {'form': form}
+        context = {'form': form}
         return render(request, 'posts/updatepost.html', context)
     else:
         return HttpResponseRedirect('/login/')
@@ -110,6 +120,10 @@ def update_post(request,pk):
 
 def delete_post(request,pk):
     if request.user.is_authenticated:
+        if request.method =="POST":
+            pi= Post.objects.get(id=pk)
+            pi.delete()
+            messages.success(request, "Post Deleted Successful")
         return HttpResponseRedirect('/dashboard/')
     else:
         return HttpResponseRedirect('/login/')

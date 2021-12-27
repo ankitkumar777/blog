@@ -18,7 +18,9 @@
         <p class="alert alert-warning my-3">{{error}}</p>
         {% endfor %}
         {% endif %}
-        <a href="{% url 'dashboard' %}" class="btn btn-success" type="Update" >Update</a>
+        <input type="submit" value="Update" class="btn btn-success">
+        <br>
+        {% comment %} <a href="{% url 'updatepost' form.id %}" class="btn btn-success" type="Update" >Update</a> {% endcomment %}
         <a href="{% url 'dashboard' %}" class="btn btn-danger" >Cancel</a>
 
     </form>
